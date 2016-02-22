@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var morgan = require("morgan");
 var methodOverride = require("method-override");
 var apiRouter = express.Router();
-var knex = require('./db/knex');
+var knex = require('../db/knex');
 // var authorRouter = require("./controllers/authors.js");
 // var bookRouter = require("./controllers/books.js");
 
@@ -23,7 +23,7 @@ app.get('/', function(req,res){
 apiRouter.route('/icecreams')
 .get(function(req,res){
   knex('posts').then(function(error,response){
-  		console.log(response);
+  		console.log(response)
 		res.json(response);
 	});
 });
